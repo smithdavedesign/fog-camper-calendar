@@ -11,19 +11,8 @@ const app = express();
 
 // Enable CORS
 app.use(cors({
-    origin: ['https://cdpn.io', 'https://smithdavedesign.herokuapp.com/', 'https://www.fogcampers.com/']
+    origin: ['https://cdpn.io', 'https://smithdavedesign.herokuapp.com/', 'https://www.fogcampers.com/','https://fog-camper-calendar.herokuapp.com/']
   }));
-
-
-// Enable CORS
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://cdpn.io');
-    res.setHeader('Access-Control-Allow-Origin', 'https://cdpn.io');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
-    next();
-  });
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
@@ -154,7 +143,7 @@ app.get("/availability", async (req, res) => {
 });
 
 
-// Start the server
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Server is running on port", process.env.PORT || 3000);
+  });
+  
