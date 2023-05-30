@@ -1,0 +1,20 @@
+{
+  "name": "fog-cal-app",
+  "version": "1.0.0",
+  "description": "fog camper google cal api app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "david smith",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "googleapis": "^105.0.0",
+    "path": "^0.12.7",
+    "process": "^0.11.10"
+  }
+}
